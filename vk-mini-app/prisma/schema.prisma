@@ -1,0 +1,17 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model Config {
+  id       String @id @default(uuid())
+  groupID  String
+  postLink String
+  promo    String
+
+  @@map("config")
+}
